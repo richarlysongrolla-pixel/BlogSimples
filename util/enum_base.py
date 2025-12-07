@@ -37,7 +37,7 @@ class EnumEntidade(str, Enum):
         Retorna lista de todos os nomes (keys) do enum.
 
         Returns:
-            Lista com os nomes de cada membro (ex: ['ADMIN', 'CLIENTE'])
+            Lista com os nomes de cada membro (ex: ['ADMIN', 'AUTOR'])
         """
         return [item.name for item in cls]
 
@@ -116,3 +116,4 @@ class EnumEntidade(str, Enum):
             Lista de tuplas [(valor, label), ...]
         """
         return [(item.value, item.value) for item in cls]
+

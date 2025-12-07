@@ -32,7 +32,7 @@ class CadastroPage:
         Preenche o formulario de cadastro.
 
         Args:
-            perfil: "Cliente" ou "Vendedor"
+            perfil: "Autor" ou "Leitor"
             nome: Nome completo
             email: E-mail
             senha: Senha
@@ -232,3 +232,4 @@ def verificar_erro_senhas_diferentes(page: Page) -> bool:
         return "senhas" in conteudo and "coincidem" in conteudo
     except Exception:
         return False
+

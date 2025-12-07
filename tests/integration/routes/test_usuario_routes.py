@@ -16,7 +16,7 @@ class TestDashboard:
         assert response.status_code == status.HTTP_303_SEE_OTHER
 
     def test_dashboard_usuario_cliente(self, cliente_autenticado):
-        """Cliente autenticado pode acessar dashboard"""
+        """Autor autenticado pode acessar dashboard"""
         response = cliente_autenticado.get("/usuario")
         assert response.status_code == status.HTTP_200_OK
 
@@ -33,7 +33,7 @@ class TestDashboard:
         assert admin_teste["nome"] in response.text
 
     def test_dashboard_vendedor(self, vendedor_autenticado, vendedor_teste):
-        """Vendedor autenticado pode acessar dashboard"""
+        """Leitor autenticado pode acessar dashboard"""
         response = vendedor_autenticado.get("/usuario")
         assert response.status_code == status.HTTP_200_OK
         assert vendedor_teste["nome"] in response.text
@@ -336,3 +336,4 @@ class TestAtualizarFoto:
             )
 
             assert response.status_code == status.HTTP_303_SEE_OTHER
+

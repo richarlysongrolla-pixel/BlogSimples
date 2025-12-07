@@ -20,7 +20,7 @@ class TestChatRoutes:
             nome="Usuario Chat 1",
             email="chat1@teste.com",
             senha="Teste@123",
-            perfil="Cliente"
+            perfil="Autor"
         )
         fazer_login("chat1@teste.com", "Teste@123")
 
@@ -29,7 +29,7 @@ class TestChatRoutes:
             nome="Usuario Chat 2",
             email="chat2@teste.com",
             senha="Teste@123",
-            perfil="Cliente"
+            perfil="Autor"
         )
 
         return {
@@ -712,3 +712,4 @@ class TestChatEnviarMensagemEdgeCases:
 
             # Deve retornar 400 Bad Request
             assert response.status_code == 400
+

@@ -59,7 +59,7 @@ class TestAdminChamadosAutorizacao:
     def test_listar_requer_admin(self, cliente_autenticado):
         """Apenas admin pode listar todos os chamados"""
         response = cliente_autenticado.get("/admin/chamados/listar", follow_redirects=False)
-        # Cliente comum deve ser negado (403 ou redirect)
+        # Autor comum deve ser negado (403 ou redirect)
         assert response.status_code in [status.HTTP_303_SEE_OTHER, status.HTTP_403_FORBIDDEN]
 
     def test_responder_get_requer_admin(self, cliente_autenticado):
@@ -205,3 +205,4 @@ class TestAdminChamadosRateLimiting:
             }, follow_redirects=False)
 
             assert_redirects_to(response, f"/admin/chamados/{chamado_id}/responder")
+
