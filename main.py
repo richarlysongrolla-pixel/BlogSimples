@@ -84,7 +84,7 @@ TABELAS = [
     (chat_sala_repo, "chat_sala"),
     (chat_participante_repo, "chat_participante"),
     (chat_mensagem_repo, "chat_mensagem"),
-    (categoria_repo, "categoria"),  # NOVA TABELA
+    (categoria_repo, "categoria"),
     (artigo_repo, "artigo"),  # NOVA TABELA
 ]
 
@@ -125,11 +125,12 @@ ROUTERS = [
     (admin_config_router, ["Admin - Configurações"], "admin de configurações"),
     (admin_backups_router, ["Admin - Backups"], "admin de backups"),
     (admin_chamados_router, ["Admin - Chamados"], "admin de chamados"),
-    (admin_categorias_router, ["Admin - Categorias"], "admin de categorias"),  # NOVO ROUTER
+    (admin_categorias_router, ["Admin - Categorias"], "admin de categorias"),
+    (artigos_router, ["Artigos"], "artigos"),  # NOVO ROUTER
     (usuario_router, ["Usuário"], "usuário"),
     (chat_router, ["Chat"], "chat"),
-    (public_router, ["Público"], "público"),
-    (examples_router, ["Exemplos"], "exemplos"),
+    (public_router, ["Público"], "público"),  # Deve ficar por último
+    (examples_router, ["Exemplos"], "exemplos"),  # Deve ficar por último
 ]
 
 # Incluir routers
